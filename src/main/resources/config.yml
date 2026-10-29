@@ -1,0 +1,72 @@
+# ───────────── TabPlus configuration ─────────────
+# Colors: &a style codes and hex like &#FF5555 both work.
+# Placeholders: %player% %displayname% %online% %max% %ping% %ping_color%
+#               %tps% %world% %group% %time% %title% %server%
+
+update-interval-ticks: 10     # how often the tab refreshes (20 ticks = 1 second)
+server-name: "&#55FFFFMy Server"
+time-format: "hh:mm a"
+
+# Animated title: one frame is shown per update, then it loops.
+animated-title:
+  - "&#FF5555&l✦ &#FFAA00&lMY SERVER &#FF5555&l✦"
+  - "&#FFAA00&l✦ &#FFFF55&lMY SERVER &#FFAA00&l✦"
+  - "&#FFFF55&l✦ &#55FF55&lMY SERVER &#FFFF55&l✦"
+  - "&#55FF55&l✦ &#55FFFF&lMY SERVER &#55FF55&l✦"
+  - "&#55FFFF&l✦ &#5555FF&lMY SERVER &#55FFFF&l✦"
+  - "&#5555FF&l✦ &#FF55FF&lMY SERVER &#5555FF&l✦"
+
+header:
+  - ""
+  - "%title%"
+  - "&8&m                                   "
+  - "&7Welcome back, &f%player%"
+  - ""
+
+footer:
+  - ""
+  - "&7World &f%world% &8| &7Rank &f%group%"
+  - "&7Online &a%online%&8/&a%max% &8| &7Ping %ping_color%%ping%ms &8| &7TPS &a%tps%"
+  - "&8&m                                   "
+  - "&7Time &f%time%  &8• &7Server &f%server%"
+  - ""
+
+# Player-name format inside the list.
+player-format:
+  suffix: " &8| %ping_color%%ping%ms"
+
+# Groups are checked top-to-bottom by priority (lowest number first).
+# A player gets the first group whose permission they have.
+groups:
+  owner:
+    permission: tabplus.group.owner
+    priority: 1
+    prefix: "&#FF5555&lOWNER &r"
+    name-color: "&#FF5555"
+  admin:
+    permission: tabplus.group.admin
+    priority: 2
+    prefix: "&#FFAA00&lADMIN &r"
+    name-color: "&#FFAA00"
+  mod:
+    permission: tabplus.group.mod
+    priority: 3
+    prefix: "&#55FFFF&lMOD &r"
+    name-color: "&#55FFFF"
+  vip:
+    permission: tabplus.group.vip
+    priority: 4
+    prefix: "&#55FF55&lVIP &r"
+    name-color: "&#55FF55"
+
+default-group:
+  priority: 99
+  prefix: "&7"
+  name-color: "&7"
+  display: "Member"
+
+messages:
+  reloaded: "&aTabPlus reloaded."
+  no-permission: "&cYou don't have permission."
+  toggled-off: "&7Custom tab &cdisabled&7."
+  toggled-on: "&7Custom tab &aenabled&7."

@@ -1,0 +1,23 @@
+name: TabPlus
+version: 1.0.0
+main: dev.tabplus.TabPlus
+api-version: "1.18"
+description: Animated, ranked, ping-aware tablist.
+commands:
+  tabplus:
+    description: TabPlus main command
+    usage: /tabplus <reload|toggle>
+    aliases: [tp]
+permissions:
+  tabplus.admin:
+    default: op
+  tabplus.toggle:
+    default: true
+  tabplus.group.owner:
+    default: false
+  tabplus.group.admin:
+    default: false
+  tabplus.group.mod:
+    default: false
+  tabplus.group.vip:
+    default: false
